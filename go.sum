@@ -1,0 +1,12 @@
+github.com/steve-care-software/blockchains v0.0.0-20230314171642-b591c788b721 h1:pdT0FWIVFW0Ni+ChgVBql4JJtLDpxe9fqs9jVJ1Bpp0=
+github.com/steve-care-software/blockchains v0.0.0-20230314171642-b591c788b721/go.mod h1:AU2b5uTHxqWq69cpGt2je/ZcMKbvKXTjQpsbGTmxW3w=
+github.com/steve-care-software/fungible-unit-genesis v0.0.0-20230314153558-39a7dee1e6bf h1:+sFuFKBh2oBJGGFff2wTC/bIjcYsYmJZoeQVPUdUBbc=
+github.com/steve-care-software/fungible-unit-genesis v0.0.0-20230314153558-39a7dee1e6bf/go.mod h1:DWis3Wsf2vt3c22IVFNXV+teLTXApmeAGqdPcfGAZEw=
+github.com/steve-care-software/fungible-units v0.0.0-20230314162332-0c96efefd604 h1:jiINCt7F7mh1NvOUw+b/javJmandoI2+/IYcdeWUCzk=
+github.com/steve-care-software/fungible-units v0.0.0-20230314162332-0c96efefd604/go.mod h1:gjN+g0OF49YwCgzjd23i/mlF6UdsGaZQGnl856QSJUM=
+github.com/steve-care-software/identities v0.0.0-20230313231040-f87005fc08c2 h1:kycluL4ryjbUaVHHCJJZh1vmQXNqQcCf/p/a5fN2z0g=
+github.com/steve-care-software/identities v0.0.0-20230313231040-f87005fc08c2/go.mod h1:KYTV3wLpI0HLJFInZ3e12FlkdN+7sF69FIEtpH+MSZA=
+github.com/steve-care-software/libs v0.0.0-20230312132714-485fdb38680d h1:LfO9I0ZWhA5XpfX0HTym2DCNmnjE4prtyaOi65Dy/jA=
+github.com/steve-care-software/libs v0.0.0-20230312132714-485fdb38680d/go.mod h1:MF+XUhALBnkezlmXhGI5ZWB6rG5KE0LB8XhF+l/Bkk8=
+github.com/steve-care-software/pow-blockchains v0.0.0-20230314172141-aa29f9728dc4 h1:VZwFjUSCOKWQKnAc7Uqtruo5im649xPfZjzAl7JcsSo=
+github.com/steve-care-software/pow-blockchains v0.0.0-20230314172141-aa29f9728dc4/go.mod h1:pIBUFaVP+v1FQwiGcc4LJ2Zby/kZVtnQV0Hp24XUM2s=
