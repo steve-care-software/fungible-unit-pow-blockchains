@@ -8,6 +8,7 @@ import (
 	chains "github.com/steve-care-software/blockchains/domain"
 	"github.com/steve-care-software/blockchains/domain/blocks"
 	"github.com/steve-care-software/blockchains/domain/transactions"
+	identities_application "github.com/steve-care-software/identities/applications"
 	identities "github.com/steve-care-software/identities/domain"
 	"github.com/steve-care-software/libs/cryptography/hash"
 	pow_blockchains_application "github.com/steve-care-software/pow-blockchains/applications"
@@ -16,6 +17,7 @@ import (
 type authenticate struct {
 	hashAdapter         hash.Adapter
 	powBlockchainApp    pow_blockchains_application.Application
+	identityApp         identities_application.Application
 	blockBuilder        blocks.Builder
 	transactionsBuilder transactions.Builder
 	transactionBuilder  transactions.TransactionBuilder
@@ -25,6 +27,7 @@ type authenticate struct {
 func createAuthenticate(
 	hashAdapter hash.Adapter,
 	powBlockchainApp pow_blockchains_application.Application,
+	identityApp identities_application.Application,
 	blockBuilder blocks.Builder,
 	transactionsBuilder transactions.Builder,
 	transactionBuilder transactions.TransactionBuilder,
@@ -33,6 +36,7 @@ func createAuthenticate(
 	out := authenticate{
 		hashAdapter:         hashAdapter,
 		powBlockchainApp:    powBlockchainApp,
+		identityApp:         identityApp,
 		blockBuilder:        blockBuilder,
 		transactionsBuilder: transactionsBuilder,
 		transactionBuilder:  transactionBuilder,
@@ -118,11 +122,32 @@ func (app *authenticate) ValidateBlock(chain chains.Chain, block blocks.Block) e
 }
 
 // SignTransaction signs a transaction,  is executed by the blockchains blockchains.EnterOnCreateTransaction
-func (app *authenticate) SignTransaction(body transactions.Body) error {
-	return nil
+func (app *authenticate) SignTransaction(body transactions.Body) (transactions.Transaction, error) {
+	hash := body.Hash()
+	signature, err := app.identityApp.Sign(hash, app.identity)
+	if err != nil {
+		return nil, err
+	}
+
+	return app.transactionBuilder.Create().
+		WithBody(body).
+		WithSignature(signature).
+		Now()
 }
 
-// ValidateTransaction validates a transaction, is executed by the blockchains blockchains.EnterOnCreateTransaction
+// ValidateTransaction validates a transaction, is executed by the blockchains blockchains.ExitOnCreateTransaction
 func (app *authenticate) ValidateTransaction(trx transactions.Transaction) error {
+	hash := trx.Body().Hash()
+	signature := trx.Signature()
+	isValid, err := app.identityApp.VerifySignature(hash, signature)
+	if err != nil {
+		return err
+	}
+
+	if !isValid {
+		str := fmt.Sprintf("the transaction (hash: %s) contains an invalid signature", trx.Hash().String())
+		return errors.New(str)
+	}
+
 	return nil
 }
