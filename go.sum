@@ -8,5 +8,5 @@ github.com/steve-care-software/identities v0.0.0-20230314174101-cf7e744b5ea4 h1:
 github.com/steve-care-software/identities v0.0.0-20230314174101-cf7e744b5ea4/go.mod h1:KYTV3wLpI0HLJFInZ3e12FlkdN+7sF69FIEtpH+MSZA=
 github.com/steve-care-software/libs v0.0.0-20230312132714-485fdb38680d h1:LfO9I0ZWhA5XpfX0HTym2DCNmnjE4prtyaOi65Dy/jA=
 github.com/steve-care-software/libs v0.0.0-20230312132714-485fdb38680d/go.mod h1:MF+XUhALBnkezlmXhGI5ZWB6rG5KE0LB8XhF+l/Bkk8=
-github.com/steve-care-software/pow-blockchains v0.0.0-20230314172141-aa29f9728dc4 h1:VZwFjUSCOKWQKnAc7Uqtruo5im649xPfZjzAl7JcsSo=
-github.com/steve-care-software/pow-blockchains v0.0.0-20230314172141-aa29f9728dc4/go.mod h1:pIBUFaVP+v1FQwiGcc4LJ2Zby/kZVtnQV0Hp24XUM2s=
+github.com/steve-care-software/pow-blockchains v0.0.0-20230314175240-7de8f7f501eb h1:QZNeryvwTZ2l4UaYJZGiIsoFIBCPqwz0Dka9zKVBOgk=
+github.com/steve-care-software/pow-blockchains v0.0.0-20230314175240-7de8f7f501eb/go.mod h1:pIBUFaVP+v1FQwiGcc4LJ2Zby/kZVtnQV0Hp24XUM2s=
